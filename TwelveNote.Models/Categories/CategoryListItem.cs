@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace TwelveNote.Models
 {
-    public class Class1
+    public class CategoryListItem
     {
+        public int CategoryId { get; set; }
+        public string CategoryTitle { get; set; }
     }
 }

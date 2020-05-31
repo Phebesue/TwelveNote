@@ -5,15 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TwelveNote.Data
+namespace TwelveNote.Models
 {
-    public class Category
+    public class CategoryCreate
     {
-        [Key]
+       [Required]
         public int CategoryId { get; set; }
         [Required]
-        public Guid OwnerID { get; set; }
-        [Required]
+        [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
         public string CategoryTitle { get; set; }
     }
 }

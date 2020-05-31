@@ -14,7 +14,7 @@ namespace TwelveNote.Data
         [Required]
         public Guid OwnerID { get; set; }
         [Required]
-        public string Title { get; set; }
+        public string NoteTitle { get; set; }
          
         public int CategoryId { get; set; }
         [Required] 
