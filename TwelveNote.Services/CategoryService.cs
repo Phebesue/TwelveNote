@@ -36,14 +36,20 @@ namespace TwelveNote.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = 
+                var query =
                     ctx
                     .Categories
-                    .Where(e => e.OwnerId == _userId)   
+                    .Where(e => e.OwnerId == _userId)
                     .Select(
-                        e=>
-                        new CategoryListItem)
-                    }
+                        e =>
+                        new CategoryListItem
+                        {
+                            CategoryId = e.CategoryId,
+                            CategoryTitle = e.CategoryTitle,
+                        }
+                     );
+                return query.ToArray();
+            }
         }
     }
 }

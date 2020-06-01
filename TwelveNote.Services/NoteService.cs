@@ -20,7 +20,7 @@ namespace TwelveNote.Services
             var entity =
                 new Note()
                 {
-                    OwnerID = _userId,
+                    OwnerId = _userId,
                     NoteTitle = model.NoteTitle,
                     Content = model.Content,
                     CreatedUTC = DateTimeOffset.Now
@@ -46,7 +46,7 @@ namespace TwelveNote.Services
                         {
                             NoteId = e.NoteId,
                             NoteTitle = e.NoteTitle,
-                            CreatedUtc = e.CreatedUtc
+                            CreatedUtc = e.CreatedUTC
                         }
                         );
                 return query.ToArray();
